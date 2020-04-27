@@ -4,7 +4,6 @@ import java.util.List;
 
 public class Citta {
 	
-	
 	private String nome;
 	private List<Rilevamento> rilevamenti;
 	private int counter = 0;
@@ -40,8 +39,8 @@ public class Citta {
 		return counter;
 	}
 
-	public void setCounter(int counter) {
-		this.counter = counter;
+	public void setCounter() {
+		this.counter+= 3;
 	}
 	
 	public void increaseCounter() {
@@ -76,6 +75,15 @@ public class Citta {
 	@Override
 	public String toString() {
 		return nome;
+	}
+
+	public void incrementaContatore() {
+		this.counter = counter + 3;		
+	}
+
+	public void decrementaContatore() {
+		this.counter = counter - 3;	
+		
 	}
 	
 

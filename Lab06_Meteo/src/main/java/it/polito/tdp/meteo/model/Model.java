@@ -47,7 +47,6 @@ public class Model {
 	}
 	
 	public String trovaSequenza(int mese) {
-		bestCosto = 0;
 		bestSoluzione = null;
 		costo = 0;
 		this.citta = dao.getTutteLeCitta(mese);
@@ -76,7 +75,7 @@ public class Model {
 		if(L == NUMERO_GIORNI_TOTALI) {
 			System.out.println(parziale);
 			int costo = calcolaCosto(parziale);
-			if(costo>bestCosto) {
+			if(bestSoluzione == null || costo<bestCosto) { // ATTENZIONE ALLE CONDIZIONI
 				bestSoluzione = new LinkedList<Rilevamento>(parziale);
 				bestCosto = costo;
 			}
@@ -118,6 +117,5 @@ public class Model {
 		
 		return costo;
 	}
-	
 
 }
